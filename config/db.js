@@ -1,5 +1,5 @@
 /**
- * 配置链接的数据库Pool
+ * Pool
  * Created by ljz-vt on 2016/3/29.
  */
 

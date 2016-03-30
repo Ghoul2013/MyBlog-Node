@@ -1,5 +1,5 @@
 /**
- * 数据库配置文件
+ *
  * Created by ljz-vt on 2016/3/29.
  */
 var sys = require('../data/baseData/systemConfig.js');
