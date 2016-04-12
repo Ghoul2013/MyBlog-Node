@@ -1,8 +1,18 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    color: whitesmoke;
+    background: url(../img/background.jpg) no-repeat fixed;
 }
 
-a {
-  color: #00B7FF;
+@font-face {
+    font-family: 'HVD Edding';
+    src: url('../font/HVD_Edding.eot');
+    src: url('../font/HVD_Edding.eot') format('embedded-opentype'),
+    url('../font/HVD_Edding.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+ol, ul {
+    list-style: none;
 }

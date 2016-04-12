@@ -8,5 +8,6 @@ module.exports = {
     user: sys.db_user,
     password: sys.db_pwd,
     host: sys.db_host,
+    port: sys.db_port,
     database: sys.db_database
 }

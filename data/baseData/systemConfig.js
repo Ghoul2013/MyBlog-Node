@@ -7,5 +7,6 @@ module.exports = {
     db_user: "root",
     db_pwd: "root",
     db_host: "127.0.0.1",
+    db_port: "3306",
     db_database: "myblog"
 }

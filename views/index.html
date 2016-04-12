@@ -1,11 +1,92 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+    <link rel='stylesheet' href='../public/plugin/bootstrap/css/bootstrap.css'/>
+    <link rel='stylesheet' href='../public/plugin/font-awesome/css/font-awesome.min.css'/>
+    <link rel='stylesheet' href='/plugin/bootstrap/css/bootstrap.css'/>
+    <link rel='stylesheet' href='/plugin/font-awesome/css/font-awesome.min.css'/>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <script src="/plugin/jquery/dist/jquery.min.js"></script>
+    <style type="text/css">
+        .navbar-header h1 {
+            font-family: HVD Edding;
+        }
+
+        .container-myid {
+            max-width: 480px;
+            padding: 0 20px;
+            display: block;
+            margin: 10% auto 0;
+        }
+
+        .container-myid p {
+            font-size: 1.3em;
+            color: #fff;
+            padding: 0;
+            margin: 60px 0 40px;
+            font-weight: 200;
+            text-align: center;
+        }
+
+        .container-myid ul {
+
+            width: 480px;
+            text-align: center;
+            margin: 0px auto;
+        }
+
+        .container-myid ul li {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            border: 1px solid #3c8089;
+            float: left;
+            margin-right: 28px;
+        }
+
+        .container-myid ul li i {
+            line-height: 50px;
+        }
+
+        .container-myid .logo {
+            text-align: center;
+        }
+
+        .container-myid .logo strong {
+            font-family: HVD Edding;
+            font-size: 6em;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-header">
+            <h1>MyBlog</h1>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="container-myid">
+        <div class="logo">
+            <strong>Hello!</strong>
+        </div>
+        <p>
+            <strong>走在平凡路上</strong><br><br>
+            <span>所在行业：钢铁互联网电商/物流WMS/运输TMS</span>
+        </p>
+        <ul>
+            <li><i class="fa fa-2x fa-envelope"></i></li>
+            <li><i class="fa fa-2x fa-github"></i></li>
+            <li><i class="fa fa-2x fa-qq"></i></li>
+            <li><i class="fa fa-2x fa-weibo"></i></li>
+            <li><i class="fa fa-2x fa-phone"></i></li>
+        </ul>
+    </div>
+
+
+</div>
+</body>
 </html>
