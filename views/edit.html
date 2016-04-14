@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='../public/plugin/bootstrap/css/bootstrap.css'/>
+    <link rel='stylesheet' href='../public/plugin/font-awesome/css/font-awesome.min.css'/>
+    <link rel='stylesheet' href='/plugin/bootstrap/css/bootstrap.css'/>
+    <link rel='stylesheet' href='/plugin/font-awesome/css/font-awesome.min.css'/>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <script src="/plugin/jquery/dist/jquery.min.js"></script>
+    <script src="/plugin/bootstrap/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .navbar-header h1 {
+            font-family: HVD Edding;
+        }
+
+        .rich-text {
+            width: 100%;
+            margin: 0;
+            font-size: 16px;
+            font-weight: 100;
+            line-height: 25px;
+        }
+
+        .rich-text .title {
+            width: 100%;
+            padding: 10px 20px 10px 30px;
+            margin-bottom: 0;
+            border-bottom: 1px solid #d9d9d9;
+            font-size: 30px;
+            font-weight: normal;
+            line-height: 30px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            border-radius: 0;
+            box-shadow: none;
+            color: #000000;
+        }
+
+        .rich-text .title {
+            height: 50px;
+            border: none;
+            outline: none;
+            -webkit-appearance: none;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+
+        .toolbar {
+            margin: 0;
+            list-style-type: none;
+            background-color: #dedede;
+            border-bottom: 1px solid #d9d9d9;
+        }
+
+        .toolbar li {
+            display: inline-block;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .toolbar .inline_menu {
+            padding: 0;
+            margin: 0;
+        }
+
+        .toolbar a {
+            padding: 11px 14px;
+            display: inline-block;
+            line-height: 17px;
+            color: black;
+        }
+
+        .toolbar a:hover {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-header">
+            <h1>Ordinary Way</h1>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <form class="rich-text">
+        <input class="title mousetrap" name="note_title" id="note_title" type="text" value="无标题文章">
+        <div id="editor" class="kalamu-box">
+            <ul class="toolbar clearfix">
+                <li class=""><a class="fa fa-bold" data-toggle="tooltip" data-original-title="粗体"
+                                style="display: none;"></a>
+                    <ul class="inline_menu">
+                        <li><a class="fa fa-bold" data-toggle="tooltip" data-original-title="粗体"></a></li>
+                        <li><a class="fa fa-italic" data-toggle="tooltip" data-original-title="斜体"></a></li>
+                        <li><a class="fa fa-strikethrough" data-toggle="tooltip" data-original-title="删除线"></a></li>
+                    </ul>
+                </li>
+                <li><a class="fa fa-quote-left" data-toggle="tooltip" data-original-title="引用"></a></li>
+                <li class=""><a class="submenu-cover " data-toggle="tooltip" data-original-title="标题一"
+                                style="display: none;">H1</a>
+                    <ul class="inline_menu">
+                        <li><a data-toggle="tooltip" data-original-title="标题一">H1</a></li>
+                        <li><a data-toggle="tooltip" data-original-title="标题二">H2</a></li>
+                        <li><a data-toggle="tooltip" data-original-title="标题三">H3</a></li>
+                        <li><a data-toggle="tooltip" data-original-title="标题四">H4</a></li>
+                    </ul>
+                </li>
+                <li class=""><a class="fa fa-minus-no-use" data-toggle="tooltip" data-original-title="分割线"
+                                style="display: none;">—</a>
+                    <ul class="inline_menu">
+                        <li><a class="fa fa-minus-no-use" data-toggle="tooltip" data-original-title="分割线">—</a></li>
+                        <li data-shortcut="ctrl-k" data-mac-shortcut="cmd-k"><a class="" data-toggle="tooltip"
+                                                                                data-original-title="插入链接"><i
+                                class="fa fa-link"></i></a></li>
+                        <li data-shortcut="ctrl-p" data-mac-shortcut="cmd-p"><a class="fa fa-picture-o"
+                                                                                data-toggle="tooltip"
+                                                                                data-original-title="插入图片"></a></li>
+                        <li><a class="fa fa-youtube-play" data-toggle="tooltip" data-original-title="插入视频"></a></li>
+                    </ul>
+                </li>
+                <li class=""><a class="submenu-cover " data-toggle="tooltip" data-original-title="撤销"
+                                style="display: none;"><i class="fa fa-undo"></i></a>
+                    <ul class="inline_menu">
+                        <li><a data-toggle="tooltip" data-original-title="撤销"><i class="fa fa-undo"></i></a></li>
+                        <li><a data-toggle="tooltip" data-original-title="重做"><i class="fa fa-repeat"></i></a></li>
+                    </ul>
+                </li>
+                <li class="pull-right publish-button-item"><a href="javascript:void(null)" data-action="publicize"
+                                                              id="publish-button"> <i class="fa fa-mail-forward"></i>
+                    发布文章 </a></li>
+                <li class="pull-right"><a href="javascript:void(null)" data-action="trigger-writing-mode"
+                                          data-toggle="tooltip" data-original-title="切换到写作模式"> <i
+                        class="fa fa-expand"></i> </a></li>
+                <li class="pull-right"><a href="javascript:void(null)" data-action="trigger-save" data-toggle="tooltip"
+                                          data-original-title="保存"> <i class="fa fa-floppy-o"></i> </a></li>
+                <li class="history-btn">
+                    <a href="javascript:void(null)" data-action="trigger-history-mode"
+                       data-toggle="tooltip" data-original-title="历史版本">
+                        <i class="fa fa-clock-o"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="kalamu-area mousetrap" contenteditable="true" style="height: 437px;"><p><br></p></div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+</body>
+</html>
