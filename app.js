@@ -9,12 +9,8 @@ var bodyParser = require('body-parser');
 var ejs = require('ejs');
 
 var markdown = require('markdown-js');
-var fs = require('fs');
 
 var settings = require('./data/baseData/systemConfig.js');
-
-var accessLog = fs.createWriteStream('info.log', {flags: 'a'});
-var errorLog = fs.createWriteStream('error.log', {flags: 'a'});
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -42,8 +38,8 @@ app.use(session({
     secret: settings.db_cookieSecret,
     key: settings.db_database,//cookie name
     cookie: {maxAge: 1000 * 60 * 60 * 24 * 30},
-    resave:false,
-    saveUninitialized:true
+    resave: false,
+    saveUninitialized: true
 }));
 
 var editpage = require('./routes/edit');
@@ -51,18 +47,12 @@ app.use('/', routes);
 app.use('/edit', editpage);
 app.use('/users', users);
 
-
-// catch 404 and forward to error handler
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
 
-// error handlers
-
-// development error handler
-// will print stacktrace
 if (app.get('env') === 'development') {
     app.use(function (err, req, res, next) {
         res.status(err.status || 500);
@@ -73,8 +63,6 @@ if (app.get('env') === 'development') {
     });
 }
 
-// production error handler
-// no stacktraces leaked to user
 app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {

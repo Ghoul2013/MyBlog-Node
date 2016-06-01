@@ -882,3 +882,16 @@ label {
         left: 0;
     }
 }
+
+footer {
+    color: #0f0f0f;
+    padding: 20px;
+}
+
+footer .footer-link {
+    height: 200px;
+}
+
+footer .footer-info {
+    overflow: hidden;
+}
