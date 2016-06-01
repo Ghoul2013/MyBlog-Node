@@ -1,10 +1,20 @@
-var express = require('express');
 var path = require('path');
+
+var express = require('express');
+var session = require('express-session');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
+
+var markdown = require('markdown-js');
+var fs = require('fs');
+
+var settings = require('./data/baseData/systemConfig.js');
+
+var accessLog = fs.createWriteStream('info.log', {flags: 'a'});
+var errorLog = fs.createWriteStream('error.log', {flags: 'a'});
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -16,18 +26,31 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine('html', ejs.__express);
 app.set('view engine', 'html');
 
-// uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
+/*用来承接字符串或者是form表单提交*/
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+
 app.use(cookieParser());
+/*静态资源变量*/
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+/*Session默认存放在内存中*/
+app.use(session({
+    secret: settings.db_cookieSecret,
+    key: settings.db_database,//cookie name
+    cookie: {maxAge: 1000 * 60 * 60 * 24 * 30},
+    resave:false,
+    saveUninitialized:true
+}));
 
 var editpage = require('./routes/edit');
 app.use('/', routes);
 app.use('/edit', editpage);
 app.use('/users', users);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
